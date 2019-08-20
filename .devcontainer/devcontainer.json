@@ -1,0 +1,23 @@
+// See https://aka.ms/vscode-remote/devcontainer.json for format details.
+{
+	"name": "C# (.NET Core 2.1)",
+	"dockerFile": "Dockerfile",
+	
+	// Uncomment the next line if you want to publish any ports.
+	"appPort": [ 3000, 5000, 5001 ],
+
+	"runArgs": [ "-e", "Kestrel__Certificates__Default__Path=/root/.dotnet/https/localhost.pfx", 
+				 "-e", "Kestrel__Certificates__Default__Password=",
+				 "-v", "/Users/geoffreyparry/Documents/projects/cert:/root/.dotnet/https"
+		        ],			
+
+	// Uncomment the next line if you want to add in default container specific settings.json values
+	// "settings":  { "workbench.colorTheme": "Quiet Light" },
+
+	// Uncomment the next line to run commands after the container is created.
+	// "postCreateCommand": "dotnet restore"
+
+	"extensions": [
+		"ms-vscode.csharp"
+	]
+}
